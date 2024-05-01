@@ -31,7 +31,7 @@ const createRole = async (req, res) => {
 }
 
 // get all data role 
-async function getAllRoles(req, res) {
+const getAllRoles = async (req, res) => {
     try {
         // if (req.user.role !== 1) {
         //     return res.status(401).json({
@@ -54,6 +54,7 @@ async function getAllRoles(req, res) {
         })
     }
 }
+
 
 module.exports = {
     createRole,
