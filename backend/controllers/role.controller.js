@@ -55,8 +55,46 @@ const getAllRoles = async (req, res) => {
     }
 }
 
+// search data role 
+const searchRole = async (req, res) => {
+    try {
+        const { id, roleName } = req.query
+
+        const whereCaluse = {}
+
+        if (id) {
+            whereCaluse.id = id
+        }
+        if (roleName) {
+            whereCaluse.roleName = roleName
+        }
+
+        const queryRole = await role_tb.findAll({ where: whereCaluse })
+
+        if (queryRole.length === 0) {
+            return res.status(404).json({
+                status_code: 404,
+                msg: "Data not found"
+            })
+        }
+
+        return res.status(200).json({
+            status_code: 200,
+            msg: 'Search data role successfully',
+            data: queryRole
+        })
+
+    } catch (error) {
+        console.error('Error', error)
+        return res.status(500).json({
+            status_code: 500,
+            msg: 'Internal Server Error'
+        })
+    }
+}
 
 module.exports = {
     createRole,
-    getAllRoles
+    getAllRoles,
+    searchRole
 }

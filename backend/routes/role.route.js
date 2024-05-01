@@ -7,4 +7,6 @@ roleRouter.post('/create', roleController.createRole)
 // get 
 roleRouter.get('/get-all', roleController.getAllRoles)
 
+roleRouter.get('/search', roleController.searchRole)
+
 module.exports = roleRouter
