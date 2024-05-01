@@ -15,10 +15,11 @@ app.use(morgan('combined'))
 
 // routers
 const roleRouter = require('./routes/role.route')
+const authRouter = require('./routes/auth.route')
 
 // api router with prefixes and versioning
 app.use('/api/role', roleRouter)
-
+app.use('/api/auth', authRouter)
 
 // Global Error Handling Middleware
 app.use((err, req, res, next) => {

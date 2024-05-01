@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 
-export const hashPassword = async (password) => {
+const hashPassword = async (password) => {
     try {
         const saltRounds = 10
 
@@ -8,10 +8,19 @@ export const hashPassword = async (password) => {
 
         return hashedPassword
     } catch (error) {
-        console.error(`Error: ${error}`);
+        throw new Error(`Error hashing password: ${error}`);
     }
 }
 
-export const comparePassword = async (password, hashedPassword) => {
-    return bcrypt.compare(password, hashedPassword)
+const comparePassword = async (password, hashedPassword) => {
+    try {
+        return await bcrypt.compare(password, hashedPassword)
+    } catch (error) {
+        throw new Error(`Error comparing passwords: ${error}`);
+    }
+}
+
+module.exports = {
+    hashPassword,
+    comparePassword
 }
