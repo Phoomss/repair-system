@@ -11,3 +11,11 @@ Repair System
   - update data info
   - check jobs 
   - Deliver work (ส่งงาน)
+
+
+
+  INSERT INTO db_repair.role_tbs (roleName,createdAt,updatedAt) VALUES
+	 ('admin','2024-05-01 10:14:57','2024-05-01 10:14:57'),
+	 ('manager','2024-05-01 10:15:09','2024-05-01 10:15:09'),
+	 ('technical','2024-05-01 10:15:18','2024-05-01 10:15:18'),
+	 ('user','2024-05-01 10:15:25','2024-05-01 10:15:25');
