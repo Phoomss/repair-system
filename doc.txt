@@ -1,0 +1,13 @@
+Repair System
+- Admin
+- Manager
+  - check jobs 
+  - Delegate work (มอบหมายงาน)
+  - update data info
+- User
+  - repair
+  - update data info
+- Technical Depart
+  - update data info
+  - check jobs 
+  - Deliver work (ส่งงาน)
